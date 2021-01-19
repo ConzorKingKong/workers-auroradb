@@ -9,8 +9,8 @@ This project is not related to, affiliated with, sponsored or endorsed by Amazon
 To generate using [wrangler](https://github.com/cloudflare/wrangler)
 
 ```
-wrangler generate projectname https://github.com/conzorkingkong/worker-auroradb
-cd projectname
+wrangler generate <projectname> https://github.com/conzorkingkong/workers-auroradb
+cd <projectname>
 ```
 
 [`index.js`](https://github.com/conzorkingkong/worker-auroradb/blob/master/index.js) is the content of the Workers script. See the commented areas of the code for where to fill in your region, table name, etc.
