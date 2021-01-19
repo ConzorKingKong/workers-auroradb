@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "workers-auroradb",
+  "version": "1.0.0",
+  "description": "A template for using auroradb inside of a Cloudflare Worker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Connor Peshek <connor@cloudflare.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-rds": "^3.3.0",
+    "@aws-sdk/client-rds-data": "^3.3.0"
+  }
+}
