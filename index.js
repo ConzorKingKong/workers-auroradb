@@ -3,7 +3,7 @@ const { RDSDataClient, ExecuteStatementCommand } = require("@aws-sdk/client-rds-
 // Replace these with your region, table, and database ARN
 const REGION = "us-west-2"
 const TABLE = "friends"
-const RESOURCEARN = ""
+const RESOURCE_ARN = ""
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
@@ -41,8 +41,11 @@ async function getData(ID) {
   });
 
   const call = new ExecuteStatementCommand({
+    
+    // This SQL command is susceptible to SQL Injections and
+    // is not production ready
     sql: `SELECT * FROM ${TABLE} WHERE id = ${ID};`,
-    resourceArn: RESOURCEARN,
+    resourceArn: RESOURCE_ARN,
     secretArn: SECRET_ARN
   })
 
@@ -73,8 +76,11 @@ async function postData(jsonData) {
   })
 
   const call = new ExecuteStatementCommand({
+
+    // This SQL command is susceptible to SQL Injections and
+    // is not production ready
     sql: `INSERT INTO ${TABLE}(${keys}) VALUES (${values});`,
-    resourceArn: RESOURCEARN,
+    resourceArn: RESOURCE_ARN,
     secretArn: SECRET_ARN
   })
 
